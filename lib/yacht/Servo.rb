@@ -1,10 +1,9 @@
 require "pi_piper"
-require_relative "./WithPWMPin"
 include PiPiper
 
 module Yacht
   class Servo
-    def initialize(pin_number, mhz)
+    def initialize(pin_number)
       @pin = PiPiper::Pwm.new(pin: pin_number, clock: 19.2e6, range: 20000)
     end
 
